@@ -199,7 +199,7 @@ nav {
   margin-bottom: 0.5rem;
 }
 
-@media (width < 900px) {
+@media (max-width: 900px) {
   .link a:not(.nav__btn) {
     display: none;
   }
@@ -224,16 +224,26 @@ nav {
   .image__container img {
     transform: translateY(0) !important;
   }
-}
 
-.about-content {
-  display: flex;
-  align-items: flex-start;
+  .about-content {
+    flex-direction: column; /* Altera a direção para coluna em telas menores */
+    align-items: center; /* Centraliza os itens */
+  }
+
+  #aboutpic {
+    margin-right: 0; /* Remove a margem direita */
+    margin-bottom: 20px; /* Adiciona uma margem inferior para espaçamento */
+  }
+
+  .book img {
+    max-width: 100%;
+  }
 }
 
 .about,
 .courses,
-.testimonials {
+.testimonials,
+.book {
   background-color: #fff;
   padding: 40px 20px;
   max-width: 1200px;
@@ -246,6 +256,12 @@ nav {
   font-size: 1.8em;
   margin-bottom: 20px;
 }
+
+.about-content {
+  display: flex;
+  align-items: flex-start;
+}
+
 #aboutpic {
   width: 100%;
   max-width: 300px;
@@ -266,6 +282,7 @@ nav {
 .courses p {
   line-height: 1.6;
 }
+
 .courses ul {
   list-style: none;
   padding: 0;
