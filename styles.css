@@ -124,6 +124,18 @@ nav {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
+#phone {
+  width: 200%;
+  max-width: 400px;
+  padding: 1rem;
+  padding-left: 3rem;
+  margin: 0.3rem;
+  font-size: 0.8rem;
+  outline: none;
+  border: none;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
 .content__container select {
   width: 100%;
   max-width: 400px;
@@ -255,6 +267,10 @@ nav {
 .testimonials h2 {
   font-size: 1.8em;
   margin-bottom: 20px;
+}
+
+.courses img{
+  display: block;
 }
 
 .about-content {
