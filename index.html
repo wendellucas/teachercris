@@ -40,7 +40,7 @@
         </p>
         <form id="english_form">
           <input type="text" name="nome" placeholder="Nome" required />
-          <input type="text" name="email" placeholder="E-mail" required/>
+          <input type="email" name="email" placeholder="E-mail" required />
           <input
             type="tel"
             name="fone"
@@ -181,11 +181,16 @@
       </div>
     </section>
     <footer class="footer">
-      <p>Me siga no Instagram:</p>
+      <p>Me siga nas redes sociais:</p>
       <a
         href="https://www.instagram.com/teachercrisrossini"
         class="fa fa-instagram"
         aria-label="Instagram"
+      ></a>
+      <a
+        href="https://www.linkedin.com/in/cristina-rossini-69774851/"
+        class="fa fa-linkedin"
+        aria-label="LinkedIn"
       ></a>
       <p>&copy; 2024 Cristina Rossini. Todos os direitos reservados.</p>
     </footer>
@@ -198,7 +203,7 @@
 
         const formData = new FormData(this);
 
-        fetch("php.php", {
+        fetch("https://wendellucas.github.io/teachercris/php.php", {
           method: "POST",
           body: formData,
         })
