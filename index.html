@@ -39,7 +39,7 @@
           Experiência internacional e métodos comprovados.
         </p>
         <form id="english_form">
-          <input type="text" name="nome" placeholder="Nome" required />
+          <input type="text" name="name" placeholder="Nome" required />
           <input type="email" name="email" placeholder="E-mail" required />
           <input
             type="tel"
@@ -54,7 +54,7 @@
           </select>
           <button type="submit">Cadastre-se</button>
         </form>
-        <div id="response"></div>
+        <div class="feito"><p id="response"></p></div>
       </div>
       <div class="image__container">
         <img src="assets/about.jpg" alt="header" />
@@ -196,6 +196,11 @@
     </footer>
   </body>
   <script>
+
+function esconderForm() {
+            document.getElementById('english_form').style.display = 'none';
+        }
+
     document
       .getElementById("english_form")
       .addEventListener("submit", function (event) {
@@ -203,12 +208,13 @@
 
         const formData = new FormData(this);
 
-        fetch("https://wendellucas.github.io/teachercris/php.php", {
+        fetch("php.php", {
           method: "POST",
           body: formData,
         })
           .then((response) => response.text())
           .then((data) => {
+            esconderForm();
             document.getElementById("response").innerText = data;
           })
           .catch((error) => {

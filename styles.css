@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #000000;
-  --primary-color-dark: #0f1e6a;
+  --primary-color-dark: hsl(230, 75%, 24%);
   --secondary-color: #f9fafe;
   --text-color: #333333;
   --white: #ffffff;
@@ -284,7 +284,7 @@ nav {
   margin-bottom: 20px;
 }
 
-.courses img{
+.courses img {
   display: block;
 }
 
@@ -353,4 +353,16 @@ nav {
 }
 .footer a:hover {
   text-decoration: underline;
+}
+
+.feito {
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 3.5rem;
+  color: var(--primary-color-dark);
+  margin-bottom: 1rem;
 }

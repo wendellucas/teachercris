@@ -7,18 +7,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Aqui você pode processar os dados, enviar email, salvar no banco de dados, etc.
 
-//   $to = "wendellucaslrd@gmail.com";
-//   $subject = "Novo cadastro por site para o método YOU CAN SPEAK";
-//   $body = "Nome: $name\nEmail: $email\nTelefone:\n$fone\nNível de inglês: $level";
-//   if (mail($to, $subject, $body)) {
-//     echo "Email enviado com sucesso!";
-//   } else {
-//     echo "Erro ao enviar email.";
-//   }
-// } else {
-//   echo "Método de requisição inválido.";
-echo "Nome: $name\nEmail: $email\nTelefone:\n$fone\nNível de inglês: $level";
+  $to = "wendeldamiao@yahoo.com.br";
+  $subject = "Novo cadastro por site para o método YOU CAN SPEAK";
+  $body = "Nome: $name\nEmail: $email\nTelefone: $fone\nNível de inglês: $level";
+  if (mail($to, $subject, $body)) {
+    echo "Parabéns, agora é só aguardar nosso contato!";
+  } else {
+    echo "Erro ao cadastrar.";
+  }
 } else {
-    echo "erro";
+  echo "Erro ao cadastrar.";
 }
 ?>
