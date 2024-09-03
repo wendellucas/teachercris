@@ -38,6 +38,10 @@ nav {
   transition: 0.3s;
 }
 
+.nav__logo img {
+  max-width: 200px;
+}
+
 .nav__links {
   list-style: none;
   display: flex;
@@ -67,6 +71,17 @@ nav {
 
 .link .nav__btn:hover {
   background-color: var(--primary-color-dark);
+}
+
+/* Estilos para telas pequenas */
+@media (max-width: 768px) {
+  nav {
+    justify-content: center;
+  }
+
+  .nav__links {
+    display: none;
+  }
 }
 
 .container {

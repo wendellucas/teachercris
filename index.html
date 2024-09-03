@@ -10,11 +10,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
   </head>
   <body>
     <nav>
-      <div class="nav__logo"><a href="#">Inglês da Cris</a></div>
+      <!-- <div class="nav__logo"><a href="#">Inglês da Cris</a></div> -->
+      <div class="nav__logo">
+        <a href="#"><img src="assets/logo.png" /></a>
+      </div>
       <ul class="nav__links">
         <li class="link"><a href="#sobre">Sobre a teacher</a></li>
         <li class="link"><a href="#metodo">O método</a></li>
@@ -35,10 +38,15 @@
           Transforme seu inglês com aulas dinâmicas e personalizadas.
           Experiência internacional e métodos comprovados.
         </p>
-        <form>
-          <input type="text" placeholder="Nome" />
-          <input type="text" placeholder="E-mail" />
-          <input type="tel" placeholder="Telefone - 5511999887766" />
+        <form id="english_form">
+          <input type="text" name="nome" placeholder="Nome" required />
+          <input type="text" name="email" placeholder="E-mail" />
+          <input
+            type="tel"
+            name="fone"
+            placeholder="Telefone - 5511999887766"
+            required
+          />
           <select id="nivel-ingles" name="nivel-ingles" required>
             <option value="basico">Básico</option>
             <option value="intermediario">Intermediário</option>
@@ -46,6 +54,7 @@
           </select>
           <button type="submit">Cadastre-se</button>
         </form>
+        <div id="response"></div>
       </div>
       <div class="image__container">
         <img src="assets/about.jpg" alt="header" />
@@ -102,7 +111,8 @@
     </section>
 
     <section class="courses" id="metodo">
-      <h2>Método By The Way - YOU CAN SPEAK</h2><img src="assets/logo.png" />
+      <h2>Método By The Way - YOU CAN SPEAK</h2>
+      <img src="assets/logo.png" />
       <h3>PRÁTICA DE CONVERSAÇÃO DESDE A PRIMEIRA AULA</h3>
       <h3>
         Os 4 pilares do programa: Imersão + Conteúdo + Comunicação + Constância
@@ -128,8 +138,15 @@
         <img src="assets/otavio.jpg" alt="Otávio" />
         <div>
           <p>
-            "Desde o começo de 2023, eu venho fazendo aulas semanais com a Professora Cristina, e foi somente na minha entrevista para o intercâmbio que eu pude realmente ter certeza do desenvolvimento que eu estou tendo. Consegui conversar normalmente, sem me sentir nervoso ou preocupado com minha fala. Parecia automático, eu estava pensando, respondendo às perguntas e contando da minha vida.
-            Então fica o meu agradecimento a Professora Cristina, pois é libertador você notar além de que está tendo resultado, perceber que agora você consegue realmente se comunicar em um outro idioma.”
+            "Desde o começo de 2023, eu venho fazendo aulas semanais com a
+            Professora Cristina, e foi somente na minha entrevista para o
+            intercâmbio que eu pude realmente ter certeza do desenvolvimento que
+            eu estou tendo. Consegui conversar normalmente, sem me sentir
+            nervoso ou preocupado com minha fala. Parecia automático, eu estava
+            pensando, respondendo às perguntas e contando da minha vida. Então
+            fica o meu agradecimento a Professora Cristina, pois é libertador
+            você notar além de que está tendo resultado, perceber que agora você
+            consegue realmente se comunicar em um outro idioma.”
           </p>
           <p><strong>Otávio</strong></p>
         </div>
@@ -138,8 +155,13 @@
         <img src="assets/ebson.jpg" alt="Ebson" />
         <div>
           <p>
-            “Tive a oportunidade de passar 1 ano nos Estados Unidos, e antes de viajar, as aulas da Cris foram maravilhosas para me ajudar a vencer a timidez, e dificuldade com vocabulário e a comunicação em inglês. Ao retornar, fazer parte da turma de inglês com a Cris me ajudou a manter o aprendizado e evoluir ainda mais. 
-As aulas são dinâmicas, com bastante conversação e com muitas situações reais que ajudam o aluno a entender o inglês de verdade!”
+            “Tive a oportunidade de passar 1 ano nos Estados Unidos, e antes de
+            viajar, as aulas da Cris foram maravilhosas para me ajudar a vencer
+            a timidez, e dificuldade com vocabulário e a comunicação em inglês.
+            Ao retornar, fazer parte da turma de inglês com a Cris me ajudou a
+            manter o aprendizado e evoluir ainda mais. As aulas são dinâmicas,
+            com bastante conversação e com muitas situações reais que ajudam o
+            aluno a entender o inglês de verdade!”
           </p>
           <p><strong>Ebson</strong></p>
         </div>
@@ -149,10 +171,12 @@ As aulas são dinâmicas, com bastante conversação e com muitas situações re
         <img src="assets/stephanie.jpg" alt="Aluno 2" />
         <div>
           <p>
-            "Com certeza toda minha experiência fora do Brasil foi mais confortável e preazerosa por conta das nossas aulas e pela amizade que criamos. Inglês nunca foi fácil para mim, mas hoje me sinto mais pronta para os novos desafios."
+            "Com certeza toda minha experiência fora do Brasil foi mais
+            confortável e preazerosa por conta das nossas aulas e pela amizade
+            que criamos. Inglês nunca foi fácil para mim, mas hoje me sinto mais
+            pronta para os novos desafios."
           </p>
-          <p><strong>Stephanie Theodoro
-          </strong></p>
+          <p><strong>Stephanie Theodoro </strong></p>
         </div>
       </div>
     </section>
@@ -166,4 +190,25 @@ As aulas são dinâmicas, com bastante conversação e com muitas situações re
       <p>&copy; 2024 Cristina Rossini. Todos os direitos reservados.</p>
     </footer>
   </body>
+  <script>
+    document
+      .getElementById("english_form")
+      .addEventListener("submit", function (event) {
+        event.preventDefault(); // Impede o comportamento padrão de envio do formulário
+
+        const formData = new FormData(this);
+
+        fetch("php.php", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("response").innerText = data;
+          })
+          .catch((error) => {
+            console.error("Erro:", error);
+          });
+      });
+  </script>
 </html>
