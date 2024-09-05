@@ -162,7 +162,7 @@ nav {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-.content__container button {
+.botao {
   width: 100%;
   max-width: 400px;
   padding: 1rem;
@@ -178,8 +178,20 @@ nav {
   cursor: pointer;
 }
 
-.content__container button:hover {
+.botao:hover {
   background-color: var(--primary-color-dark);
+}
+
+.feito {
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 3.5rem;
+  color: var(--primary-color-dark);
+  margin-bottom: 1rem;
 }
 
 .image__container {
@@ -235,9 +247,9 @@ nav {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .content__container {
+  /* .content__container {
     text-align: center;
-  }
+  } */
 
   .content__container form {
     margin-right: auto;
@@ -265,6 +277,19 @@ nav {
   .book img {
     max-width: 100%;
   }
+
+  #phone {
+    /* width: 200%; */
+    max-width: 368px;
+    padding: 1rem;
+    padding-left: 3rem;
+    margin: 0.3rem;
+    font-size: 0.8rem;
+    /* outline: none; */
+    /* border: none; */
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  }
+
 }
 
 .about,
@@ -353,16 +378,4 @@ nav {
 }
 .footer a:hover {
   text-decoration: underline;
-}
-
-.feito {
-  padding: 20px;
-  color: white;
-  text-align: center;
-  font-size: 1.2em;
-  font-size: 6rem;
-  font-weight: 400;
-  line-height: 3.5rem;
-  color: var(--primary-color-dark);
-  margin-bottom: 1rem;
 }
