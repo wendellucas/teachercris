@@ -280,8 +280,113 @@ nav {
 }
 .courses ul li {
   margin-bottom: 10px;
-  font-size: 1.2em;
+  font-size: 1em;
 }
+
+/* CSS PARA MÉTODO DE ENSINO */
+
+.courses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Se você quiser centralizar verticalmente também */
+  text-align: center;
+  padding: 20px;
+}
+
+.container_course {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh; /* Ajuste conforme necessário */
+}
+
+
+.courses h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.courses img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.courses h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.pillars {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pillars li {
+  background-color: #f0f0f0;
+  border: 1px solid hsl(230, 75%, 24%);
+  border-radius: 8px;
+  padding: 20px;
+  width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.pillars li::after {
+  content: "+";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+  color: #333;
+}
+
+.pillars li:last-child::after {
+  content: "";
+}
+
+.pillars li:hover {
+  transform: scale(1.05);
+}
+
+.resultado-box {
+  background-color: rgb(217, 40, 52);
+  border: 2px solid hsl(230, 75%, 24%);
+  border-radius: 12px;
+  padding: 3px;
+  margin-top: 5px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 300px;
+  height: 100px;
+  justify-content: center;
+}
+
+.plus_sign{
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.resultado-box:hover {
+  transform: scale(1.05);
+}
+
+.resultado-box h2 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #333;
+}
+
+/* CSS PARA DEPOIMENTOS */
+
 .testimonials {
   background-color: #fff;
 }
@@ -299,6 +404,8 @@ nav {
 .testimonial p {
   font-style: italic;
 }
+
+/* CSS PARA RODAPÉ */
 
 .footer {
   /* background-color: #fff; */
