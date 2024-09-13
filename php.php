@@ -8,16 +8,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Aqui você pode processar os dados, enviar email, salvar no banco de dados, etc.
 
-  $to = "wendeldamiao@yahoo.com.br";
+  $to = "wendellucaslrd@gmail.com";
   $subject = "Novo cadastro por site para o método YOU CAN SPEAK";
   $body = "NOVO CADASTRO REALIZADO\nNome: $name\nEmail: $email\nTelefone: $full\nNível de inglês: $level";
-  if (mail($to, $subject, $body)) {
-    echo "Parabéns, agora é só aguardar nosso contato!";
+  $enviado = mail($to, $subject, $body);
+  if ($enviado) {
+    echo json_encode(['success' => true]);
   } else {
-    echo "Erro ao cadastrar.";
+    echo json_encode(['success' => false]);
   }
-  // echo $body;
-} else {
-  echo "Erro ao cadastrar.";
 }
-?>

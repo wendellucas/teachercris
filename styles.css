@@ -6,6 +6,7 @@
   --secondary-color: #f9fafe;
   --text-color: #333333;
   --white: #ffffff;
+  --vermelho: rgb(217, 40, 52);
   --max-width: 1200px;
 }
 
@@ -301,7 +302,6 @@ nav {
   height: 20vh; /* Ajuste conforme necessário */
 }
 
-
 .courses h2 {
   font-size: 2em;
   margin-bottom: 10px;
@@ -327,15 +327,20 @@ nav {
   flex-wrap: wrap;
 }
 
+.pillars h4 {
+  font-size: 1.8em;
+}
+
 .pillars li {
-  background-color: #f0f0f0;
+  background-color: #216093;
   border: 1px solid hsl(230, 75%, 24%);
   border-radius: 8px;
   padding: 20px;
-  width: 150px;
+  width: 250px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
   position: relative;
+  color: #f0f0f0;
 }
 
 .pillars li::after {
@@ -354,35 +359,38 @@ nav {
 
 .pillars li:hover {
   transform: scale(1.05);
+  background-color: var(--vermelho);
 }
 
 .resultado-box {
-  background-color: rgb(217, 40, 52);
-  border: 2px solid hsl(230, 75%, 24%);
+  background-color: var(--vermelho);
+  color: var(--white);
+  border: 2px solid hsl(230, 75%, 24);
   border-radius: 12px;
   padding: 3px;
-  margin-top: 5px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   position: relative;
   width: 300px;
-  height: 100px;
+  height: 150px;
   justify-content: center;
+  transition: transform 0.3s;
 }
 
-.plus_sign{
+.plus_sign {
   font-size: 2.5em;
   color: #333;
-  margin-bottom: 10px;
 }
 
 .resultado-box:hover {
   transform: scale(1.05);
+  background-color: hsl(230, 75%, 24%);
 }
 
 .resultado-box h2 {
   margin: 0;
   font-size: 2.5em;
-  color: #333;
+  /* color: rgb(217, 40, 52); */
+  color: var(--white);
 }
 
 /* CSS PARA DEPOIMENTOS */
@@ -482,7 +490,7 @@ nav {
     border: none;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   }
-  
+
   #phone {
     /* width: 130%; */
     max-width: 328px;
@@ -494,7 +502,7 @@ nav {
     border: none;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   }
-  
+
   .content__container select {
     /* width: 100%; */
     max-width: 328px;
@@ -505,7 +513,7 @@ nav {
     border: none;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   }
-  
+
   .botao {
     /* width: 100%; */
     max-width: 328px;
@@ -521,4 +529,39 @@ nav {
     transition: 0.3s;
     cursor: pointer;
   }
+}
+
+.caixa-agradecimento {
+  width: 300px;
+  padding: 20px;
+  margin: 50px auto;
+  border: 2px solid #4caf50;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+.caixa-agradecimento h2 {
+  color: #4caf50;
+}
+.caixa-agradecimento p {
+  color: #333;
+}
+.waButton {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.waButton:hover{
+  transform: scale(1.05);
 }

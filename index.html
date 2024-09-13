@@ -82,6 +82,14 @@
           <button class="botao" type="submit">Cadastre-se</button>
         </form>
         <div class="feito"><p id="response"></p></div>
+        <div id="agradecimento" class="caixa-agradecimento" hidden>
+          <h2>Obrigado pelo Cadastro!</h2>
+          <p>Em breve entraremos em contato com você.</p>
+          <a
+            href="https://wa.me/5516997625201?text=Olá!%20Gostaria%20de%20mais%20informações."
+            target="_blank"
+            class="waButton">Fale com a teacher no WhatsApp!</a>
+        </div>
       </div>
       <div class="image__container">
         <img src="assets/about.jpg" alt="header" />
@@ -143,18 +151,18 @@
       <h3>PRÁTICA DE CONVERSAÇÃO DESDE A PRIMEIRA AULA</h3>
       <h3>Os 4 pilares do programa:</h3>
       <ul class="pillars">
-        <li>Imersão</li>
-        <li>Conteúdo</li>
-        <li>Comunicação</li>
-        <li>Constância</li>
+        <li><h4>Imersão</h4><br><p>Você inserido na cultura inglesa desde o início</p></li>
+        <li><h4>Conteúdo</h4><br>Material planejado para melhor aprendizado</li>
+        <li><h4>Comunicação</h4><br>Você falando inglês desde a primera aula</li>
+        <li><h4>Constância</h4><br>Método de aprendizado contínuo</li>
       </ul>
       <p class="plus_sign">=</p>
       <div class="container_course">
         <div class="resultado-box">
           <h2>Resultado</h2>
+          <p>O inglês como sua segunda natureza!</p>
         </div>
       </div>
-
       <br />
       <ul>
         <li>Ambiente imersivo</li>
@@ -247,6 +255,10 @@
       document.getElementById("english_form").style.display = "none";
     }
 
+    function mostrarAgradecimento() {
+      document.getElementById("agradecimento").removeAttribute("hidden");
+    }
+
     document
       .getElementById("english_form")
       .addEventListener("submit", function (event) {
@@ -262,15 +274,17 @@
           .then((data) => {
             esconderForm();
             document.getElementById("response").innerText = data;
+            mostrarAgradecimento();
 
-            const whatsapp = document.createElement("a");
-            whatsapp.textContent = "Fale com a teacher no WhatsApp!";
-            whatsapp.href =
-              "https://wa.me/5516997625201?text=Olá!%20Gostaria%20de%20mais%20informações.";
-            whatsapp.target = "_blank";
-            whatsapp.style =
-              "background-color: #25D366; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 5px;";
-            document.getElementById("response").appendChild(whatsapp);
+            // const whatsapp = document.createElement("a");
+            // whatsapp.textContent = "Fale com a teacher no WhatsApp!";
+            // whatsapp.href =
+            //   "https://wa.me/5516997625201?text=Olá!%20Gostaria%20de%20mais%20informações.";
+            // whatsapp.target = "_blank";
+            // whatsapp.className = "waButton";
+            // whatsapp.style =
+            //   "background-color: #25D366; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 5px;transition: transform 0.3s;";
+            //   document.getElementById("response").appendChild(whatsapp);
           })
           .catch((error) => {
             console.error("Erro:", error);
