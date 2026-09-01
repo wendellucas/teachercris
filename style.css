@@ -1,0 +1,11 @@
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.bg-gradient-brand {
+    background: linear-gradient(135deg, #420002 0%, #6c0000 50%, #b43174 100%);
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 25px rgba(203, 64, 121, 0.6);
+}
